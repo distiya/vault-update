@@ -8,6 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
+/**
+ * This is the UserDetail implementation for spring boot security
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 public class VaultUser implements UserDetails {

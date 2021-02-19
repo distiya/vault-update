@@ -7,6 +7,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * This is the UserDetailsService for spring boot security
+ */
 @Service
 @Slf4j
 public class VaultUserDetailsService implements UserDetailsService {

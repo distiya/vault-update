@@ -13,6 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Base64;
 
+/**
+ * All the requests to the server will be intercepted by this filter. The authorization header
+ * will be inspected by this filter and check whether it contains basic authentication header or not.
+ * If the basic authentication header is present, the user name and password will be extracted and the
+ * extracted values will be checked with the configured values in {@link UserPrincipal}. If those values
+ * are not matching, {@link RefreshEndpoint#refresh()} will be invoked to refresh the configuration from
+ * spring cloud config server which is backed by vault backend
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class SecurityRefreshFilter extends GenericFilterBean {
