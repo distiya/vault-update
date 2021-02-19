@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: vault-update-poc
+  cloud:
+    config:
+      enabled: false

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: vault-update-poc
+management:
+  endpoints:
+    web:
+      include: 'refresh'

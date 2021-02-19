@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: vaultpoc
+  cloud:
+    config:
+      enabled: true
+      uri: ${CONFIG_SERVER_URI:http://localhost:8888}
+      allowOverride: true
+      overrideNone: true
+      overrideSystemProperties: false
+  profiles:
+    active: default
