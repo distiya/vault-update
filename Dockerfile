@@ -1,0 +1,9 @@
+FROM amazoncorretto:11
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENV CONFIG_SERVER_URI config-server-uri
+ENV MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE refresh
+ENV SPRING_PROFILES_ACTIVE default
+ENV SERVER_PORT 8080
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","/app.jar"]
