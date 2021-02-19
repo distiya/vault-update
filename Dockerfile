@@ -1,9 +1,13 @@
 FROM amazoncorretto:11
 ARG JAR_FILE=target/*.jar
+ARG WAIT_BASH_FILE=wait-for-it.sh
+ARG START_BASH_FILE=startup.sh
 COPY ${JAR_FILE} app.jar
+COPY ${WAIT_BASH_FILE} wait.sh
+COPY ${START_BASH_FILE} start.sh
 ENV CONFIG_SERVER_URI config-server-uri
 ENV MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE refresh
 ENV SPRING_PROFILES_ACTIVE default
 ENV SERVER_PORT 8080
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["sh","/start.sh"]
