@@ -18,7 +18,7 @@ import org.springframework.cloud.endpoint.RefreshEndpoint;
 @ConfigurationProperties
 public class UserPrincipal {
 
-    private String securityUserName;
-    private String securityPassword;
+    private String securityUserName = "vaultUser";
+    private String securityPassword = "vaultPassword";
 
 }
