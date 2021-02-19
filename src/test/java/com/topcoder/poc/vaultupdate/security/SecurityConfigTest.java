@@ -9,13 +9,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 
 @EnableWebSecurity
-@Profile("!test")
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+@Profile("test")
+public class SecurityConfigTest extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserPrincipal userPrincipal;
 
-    @Autowired
+    @Autowired(required = false)
     private RefreshEndpoint refreshEndpoint;
 
     /**
